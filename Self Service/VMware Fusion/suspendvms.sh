@@ -12,8 +12,6 @@
 ########################################################################
 
 vm=`/Applications/VMware\ Fusion.app/Contents/Library/vmrun list`
-vmsRunning=`echo "$vm" | tail -n +2`
-
 #find if there are vm's running, and if there are suspend them.
 if [[ "$vm" == "Total running VMs: 0" ]]; then
 	echo "no vm's running"

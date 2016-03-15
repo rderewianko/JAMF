@@ -17,7 +17,7 @@ if [ "$5" != "" ] && [ "$domainjoinun" == "" ]; then
 fi
 
 ou="OU=Mac,OU=Contoso Computers,Computers,DC=corp,DC=contoso,DC=com"
-domain="corp.company.com"
+domain="corp.contoso.com"
 adserver="locationtoanadserver"
 
 ########################################################################

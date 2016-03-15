@@ -2,16 +2,17 @@
 ########################################################################
 # Created By: Ross Derewianko Ping Identity Corporation
 # Creation Date: Febuary, 2015 
-# Last modified: Febuary 27, 2015
+# Last modified: March 15, 2016
 # Brief Description: Changes machine hostname
 ########################################################################
 
 #check for cocoa dialogue & if not install it
-if [ -d "<location of Cocoa Dialogue>" ]; then
+if [ -d "<location of Cocoa Dialogue.app>" ]; then
 	CD="<location of Cocoa Dialogue>/Contents/MacOS/CocoaDialog"
 else
 	echo "CocoaDialog.app not found installing" 
 	/usr/sbin/jamf policy -trigger cocoa
+	CD="<location of Cocoa Dialogue>/Contents/MacOS/CocoaDialog"
 fi
 
 ########################################################################

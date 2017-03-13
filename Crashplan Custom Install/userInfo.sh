@@ -26,7 +26,7 @@ startDesktop=false
 # 
 
 user=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
-CP_USER_HOME="/Users/$user"
+CP_USER_HOME=$(/usr/bin/dscl . -read "/Users/${user}" NFSHomeDirectory | awk '{print$2}')
 userGroup=`id -gn "$user"`
 CP_USER_NAME="$user"
 
